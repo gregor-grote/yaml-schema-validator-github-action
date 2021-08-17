@@ -17,14 +17,10 @@ fi
 
 source ./yaml.sh
 
-create_variables file.yaml
-
->&2 echo $schema
-
-
-for d in $dir/*/ 
+for d in $dir/*.yaml 
 do
-  if [ -f ${d}schema.yaml -a -f ${d}data.yaml ]; then
+  if [ -f ${d} ]; then
+    create_variables $d
     yamale --schema=${d}schema.yaml ${d}data.yaml $strict
   fi
 done
