@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Validate
-        uses: ./ # Uses an action in the root directory
+        uses: gregor-grote/yaml-schema-validator-github-action@master
         with:
           dir: data
