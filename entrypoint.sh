@@ -21,7 +21,7 @@ fi
 for d in ${dir}/* 
 do
   if [ -d ${d} -a -f ${d}/schema.yaml -a -f ${d}/data.yaml] then
-    >&2 echo ${d}
+    >&2 echo $d
     #yamale --schema=$d/schema.yaml $d/data.yaml $strict;
   fi
 done
