@@ -18,8 +18,10 @@ then
   exit 1
 fi
 
-for d in "$dir"/*/ 
+for d in $dir/*/ 
 do
+  if [ -f ${d}schema.yaml -a -f ${d}data.yaml ]; then
     >&2 echo "$d";
+  fi
 done
 
