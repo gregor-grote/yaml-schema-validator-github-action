@@ -12,15 +12,15 @@ then
   strict='--strict'
 fi
 
-if [ ! -d ${dir}]
+if [ ! -d $dir ]
 then
   >&2 echo "Target directory does not exist: ${dir}"
   exit 1
 fi
 
-for d in ${dir}/*; 
+for d in ${dir}/* 
 do
-  if [ -d ${d} -a -f ${d}/schema.yaml -a -f ${d}/data.yaml]; then
+  if [ -d ${d} -a -f ${d}/schema.yaml -a -f ${d}/data.yaml] then
     >&2 echo ${d}
     #yamale --schema=$d/schema.yaml $d/data.yaml $strict;
   fi

@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
-# COPY example/ ./example
+ COPY example/ ./example
 
 # Nonexistent
 USER 2000:2000
