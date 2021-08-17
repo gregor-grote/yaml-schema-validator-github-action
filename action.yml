@@ -1,15 +1,12 @@
 name: 'YAML schema validation'
 description: 'YAML schema validation using https://github.com/23andMe/Yamale'
-author: stigok
+author: gregor
 branding:
   icon: 'file-text'
   color: 'blue'
 inputs:
-  schema:
-    description: 'Yamale schema file'
-    required: true
-  target:
-    description: 'File to validate'
+  dir:
+    description: 'Content directory'
     required: true
   strict:
     description: 'Enable strict mode. Set to a non-empty string to enable.'
