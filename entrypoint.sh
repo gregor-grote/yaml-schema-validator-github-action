@@ -15,6 +15,13 @@ then
   exit 1
 fi
 
+source ./yaml.sh
+
+create_variables file.yaml
+
+>&2 echo $schema
+
+
 for d in $dir/*/ 
 do
   if [ -f ${d}schema.yaml -a -f ${d}data.yaml ]; then
