@@ -15,11 +15,14 @@ then
   exit 1
 fi
 
+source ./yaml.sh
+
 for d in $dir/*.yaml 
 do
   >&2 echo $d
   if [ -f ${d} ]; then
-    yamale --schema=${d}schema.yaml ${d}data.yaml $strict
+    create_variables $d
+    yamale --schema=$schema $d $strict
   fi
 done
 
