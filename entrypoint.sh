@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eux
 
+>&2 echo "Hello world"
+
 strict=''
 dir=${INPUT_DIR:-$1}
 
@@ -18,8 +20,9 @@ fi
 
 for d in ${dir}/*; 
 do
-  if [ -d $d -a -f $d/schema.yaml -a -f $d/data.yaml] then
-    yamale --schema=$d/schema.yaml $d/data.yaml $strict
+  if [ -d $d -a -f $d/schema.yaml -a -f $d/data.yaml]; then
+    >&2 echo $d
+    #yamale --schema=$d/schema.yaml $d/data.yaml $strict;
   fi
 done
 

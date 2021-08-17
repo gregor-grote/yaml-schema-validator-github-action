@@ -1,0 +1,13 @@
+name: test
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: test-job
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate
+        uses: ./ # Uses an action in the root directory
+        with:
+          dir: data
